@@ -1,29 +1,25 @@
 public abstract class GenericCar <T>{
-    private String carBrand;
+    private String modelCar;
     private T hp;
-    private T doorsQuantity;
+    private T modelVersion;
 
-    protected GenericCar(String carBrand, T hp, T doorsQuantity) {
-        this.carBrand = carBrand;
+    protected GenericCar(String modelCar, T hp, T modelVersion) {
+        this.modelCar = modelCar;
         this.hp = hp;
-        this.doorsQuantity = doorsQuantity;
+        this.modelVersion = modelVersion;
     }
 
-    public String getCarBrand(){
-        return this.carBrand;
+    public String getModelCar(){
+        return this.modelCar;
     }
 
     public T getHp(){
         return this.hp;
     }
 
-    public T getDoorsQuantity(){
-        return this.doorsQuantity;
+    public T getModelVersion(){
+        return this.modelVersion;
     }
 
-    public void showCustumerCar(){
-        System.out.println("A marca do carro é: " + this.carBrand +
-                " possuindo " + this.hp + " cavalos" +
-                " com " + this.doorsQuantity + " portas.");
-    }
+    public abstract void showCustumerCar();
 }

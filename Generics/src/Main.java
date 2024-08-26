@@ -7,9 +7,9 @@ public class Main {
         List<GenericCar> carsList = new ArrayList<>();
 
         //Creating my attributes
-        GenericCar<Long> selectedCar1 = new CustumerCar("Honda", 600, 4);
-        GenericCar<Integer> selectedCar2 = new CustumerCar("Hyundai", 800, 3);
-        GenericCar<String> selectedCar3 = new CustumerCar("Toyota", 1200, 2);
+        GenericCar<Long> selectedCar1 = new HondaCar("WR-V", 116, 2022);
+        GenericCar<Integer> selectedCar2 = new MitsubishiCar("Lancer Evolution X", 280, 2007);
+        GenericCar<String> selectedCar3 = new ToyotaCar("Yaris", 110, 2021);
 
         //Adding my cars created to the list
         carsList.add(selectedCar1);
