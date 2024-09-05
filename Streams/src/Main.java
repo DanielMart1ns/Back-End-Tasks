@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -49,8 +50,9 @@ public class Main {
     }
 
     public static void showResults(){
-        Stream<Person> womensList = peopleList.stream()
-                .filter(person -> person.getGender().equalsIgnoreCase("fem"));
+        List<Person> womensList = peopleList.stream()
+                .filter(person -> person.getGender().equalsIgnoreCase("fem"))
+                .collect(Collectors.toList());
 
         System.out.println("\n###### Mostrando somente mulheres ######");
         womensList.forEach(women -> System.out.println("- " + women.getName()));
