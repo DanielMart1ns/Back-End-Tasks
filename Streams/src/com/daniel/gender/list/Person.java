@@ -1,3 +1,5 @@
+package com.daniel.gender.list;
+
 public class Person {
     private String name;
     private String gender;

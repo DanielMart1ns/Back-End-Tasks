@@ -1,9 +1,9 @@
+package com.daniel.gender.list;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
