@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Tests1/tests/|Streams/tests/|TarefaWrapper/src/|Tests2/tests/|Tests2/src/|Generics/src/|CollectionsPart2/src/|Collections/src/|PrimeiroProjetoJava/src/|TarefaCalculoMedia/src/|DesingPatterns1/src/|ExemploVendasMod30/src/test/java/|Streams/src/|TarefaPOO/src/|Tests1/src/|Reflections/src/|TarefaClasses/src/|TarefaControleDeFluxo/src/|ExemploVendasMod30/src/main/java/" kind="src" path=""/>
+	<classpathentry kind="src" path="Collections/src"/>
+	<classpathentry kind="src" path="CollectionsPart2/src"/>
+	<classpathentry kind="src" path="DesingPatterns1/src"/>
+	<classpathentry kind="src" path="ExemploVendasMod30/src/main/java"/>
+	<classpathentry kind="src" path="ExemploVendasMod30/src/test/java"/>
+	<classpathentry kind="src" path="Generics/src"/>
+	<classpathentry kind="src" path="PrimeiroProjetoJava/src"/>
+	<classpathentry kind="src" path="Reflections/src"/>
+	<classpathentry kind="src" path="Streams/src"/>
+	<classpathentry kind="src" path="Streams/tests"/>
+	<classpathentry kind="src" path="TarefaCalculoMedia/src"/>
+	<classpathentry kind="src" path="TarefaClasses/src"/>
+	<classpathentry kind="src" path="TarefaControleDeFluxo/src"/>
+	<classpathentry kind="src" path="TarefaPOO/src"/>
+	<classpathentry kind="src" path="TarefaWrapper/src"/>
+	<classpathentry kind="src" path="Tests1/src"/>
+	<classpathentry kind="src" path="Tests1/tests"/>
+	<classpathentry kind="src" path="Tests2/src"/>
+	<classpathentry kind="src" path="Tests2/tests"/>
+	<classpathentry kind="output" path="Collections/out/production/Collections-parte-1"/>
+</classpath>
