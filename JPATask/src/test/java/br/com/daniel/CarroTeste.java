@@ -4,10 +4,13 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import br.com.daniel.dao.AcessorioDAO;
 import br.com.daniel.dao.CarroDAO;
+import br.com.daniel.dao.IAcessorioDAO;
 import br.com.daniel.dao.ICarroDAO;
 import br.com.daniel.dao.IMarcaDAO;
 import br.com.daniel.dao.MarcaDAO;
+import br.com.daniel.domain.Acessorio;
 import br.com.daniel.domain.Carro;
 import br.com.daniel.domain.Marca;
 
@@ -15,21 +18,30 @@ public class CarroTeste {
 	
 	private IMarcaDAO marcaDAO;
 	private ICarroDAO carroDAO;
+	private IAcessorioDAO acessorioDAO;
 	
 	private Marca marca1;
 	private Marca marca2;
+	
+	private Acessorio acessorio1;
+	private Acessorio acessorio2;
 	
 	private int count = 1;
 	
 	public CarroTeste() {
 		marcaDAO = new MarcaDAO();
 		carroDAO = new CarroDAO();
+		acessorioDAO = new AcessorioDAO();
 		
 		marca1 = definirMarca();
 		marca2 = definirMarca();
 		count = 1;
+		
+		acessorio1 = definirAcessorio();
+		acessorio2 = definirAcessorio();
+		count = 1;
 	}
-	
+
 	@Test
 	public void cadastrar() {
 		Carro carro1 = definirCarro();
@@ -55,6 +67,7 @@ public class CarroTeste {
 				carro.setAnoFabricacao(2021);
 				carro.setQtdPortas(4);
 				carro.setMarca(marca1);   
+				carro.addAcessorio(acessorio2);
 				count++;
 				return carro = carroDAO.cadastrar(carro);
 			} 
@@ -63,6 +76,8 @@ public class CarroTeste {
 				carro.setAnoFabricacao(2019);
 				carro.setQtdPortas(4);
 				carro.setMarca(marca1);   
+				carro.addAcessorio(acessorio1);
+				carro.addAcessorio(acessorio2);
 				count++;
 				return carro = carroDAO.cadastrar(carro);
 			}
@@ -72,6 +87,7 @@ public class CarroTeste {
 		carro.setAnoFabricacao(1938);
 		carro.setQtdPortas(2);
 		carro.setMarca(marca2);   
+		carro.addAcessorio(acessorio1);
 		return carro = carroDAO.cadastrar(carro);
 	}
 
@@ -87,6 +103,18 @@ public class CarroTeste {
 		marca.setNome("Volkswagen");
 		marca.setPaisDeOrigem("Alemanha");
 		return marcaDAO.cadastrar(marca);
+	}
+	
+	private Acessorio definirAcessorio() {
+		Acessorio acessorio = new Acessorio();
 		
+		if(count == 1) {
+			acessorio.setNome("Rack de teto");
+			count++;
+			return acessorioDAO.cadastrar(acessorio);
+		}
+		
+		acessorio.setNome("Bico de escape");
+		return acessorioDAO.cadastrar(acessorio);
 	}
 }

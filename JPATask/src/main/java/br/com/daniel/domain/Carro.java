@@ -1,5 +1,9 @@
 package br.com.daniel.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -7,6 +11,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -35,6 +42,26 @@ public class Carro {
 		referencedColumnName = "id", nullable = false)
 	private Marca marca;
 	
+	@ManyToMany
+	@JoinTable(
+			name = "TB_ACESSORIO_CARRO",
+			joinColumns = { @JoinColumn(name = "id_carro_fk")},
+			inverseJoinColumns = { @JoinColumn(name = "id_acessorio_fk") }
+			)
+	private List<Acessorio> acessorio;
+	
+	public Carro() {
+		this.acessorio = new ArrayList<Acessorio>();
+	}
+	
+	public List<Acessorio> getAcessorio() {
+		return acessorio;
+	}
+	
+	public void addAcessorio(Acessorio acessorio) {
+		this.acessorio.add(acessorio);
+	}
+
 	public Marca getMarca() {
 		return marca;
 	}
@@ -43,7 +70,6 @@ public class Carro {
 		this.marca = marca;
 	}
 
-	//	Getters and setters
 	public Long getId() {
 		return id;
 	}
